@@ -16,12 +16,14 @@
 
 /* RGB */
 $primary: #3454d1;
+$primary-dimmed: adjust-color($primary, $lightness: -10%);
 $highlight: #f7b267;
 $shadow: rgba(66, 78, 123, 1);
 $light: #bbdaf9;
 $bg: rgba(255, 255, 255, 1);
 $error: #d1345B;
 $dark: #070707;
+$md-grey: #bbb;
 
 $padding-primary: 8px;
 $padding-big: 14px;
@@ -46,14 +48,17 @@ nav {
 }
 
 table {
+    border: 1px solid $shadow;
+    border-radius: $padding-primary;
     border-collapse: collapse;
 }
 td, th {
-    padding: $padding-small;
+    padding: $padding-primary;
     text-align: left;
 }
 
 th {
+    padding: $padding-big $padding-primary;
     border-bottom: 1px solid $shadow;
 }
 
@@ -79,4 +84,44 @@ a.active {
 a:hover {
     color: $highlight;
     text-decoration: underline;
+}
+
+// button styles!!
+
+button, input[type='submit'] {
+    background-color: $primary;
+    color: $bg;
+    border: 1px solid transparent;
+    border-radius: $padding-primary;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5em .75em;
+    white-space: nowrap;
+    text-align: center;
+}
+
+button:hover, input[type='submit']:hover {
+    background-color: $primary-dimmed;
+    transition: 0.2s ease;
+}
+
+// Flash messages
+#error_explanation {
+    padding: $padding-big 0;
+}
+
+#error_explanation em {
+    font-weight: 600;
+    color: $error;
+}
+
+
+.form-element {
+    padding: $padding-primary 0;
+}
+
+input {
+    border: 1px solid $md-grey;
+    border-radius: 0.25em;
+    padding: 0.5em 0.75em;
 }
