@@ -1,0 +1,11 @@
+<div class='container'>
+    <h1>Dashboard</h1>
+    <img class='profile-pic' src="<%=session[:userinfo]["info"]["image"]%>">
+    <p>Welcome <%=session[:userinfo]["info"]["name"]%> <p>
+    <%= button_to 'Log Out', auth_logout_path, method: :get %>
+
+    <h2> Debug stuff </h2>
+    <pre>
+        <%= session[:userinfo].pretty_inspect %>
+    </pre>
+</div>

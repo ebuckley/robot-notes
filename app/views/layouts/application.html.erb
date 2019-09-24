@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby notes - like any other note taking applicaiton but this one has batteries included!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%# TODO: we could use params[:controller] here to load js on every page! %>
+    <%= javascript_pack_tag 'articles', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <%= my_link_to 'Write', new_article_url %> | &nbsp;
+        <%= my_link_to 'Find', articles_url %>  | &nbsp;
+        <%= my_link_to 'Profile', dashboard_show_url  %>
+      </nav>
+    </header>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+    <%= yield %>
+  </body>
+</html>

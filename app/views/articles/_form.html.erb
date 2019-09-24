@@ -1,0 +1,30 @@
+
+     <% if @article.errors.any? %>
+        <div id="error_explanation">
+        <em>
+            <%= pluralize(@article.errors.count, "error") %> prohibited
+            this article from being saved:
+        </em>
+        <ul>
+            <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
+        </div>
+    <%end%>
+
+    <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+    
+        <div class='form-element'>
+            <label>
+                <%= form.label :title %>
+                <%= form.text_field :title %>
+            </label>
+        </div>
+        <div class='form-element'>
+          <%= form.text_area :text %>
+        </div>
+        <div class='form-element'>
+            <%= form.submit %>
+        </div>
+    <% end %>

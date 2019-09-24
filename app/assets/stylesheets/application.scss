@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* RGB */
+$primary: #3454d1;
+$highlight: #f7b267;
+$shadow: rgba(66, 78, 123, 1);
+$light: #bbdaf9;
+$bg: rgba(255, 255, 255, 1);
+$error: #d1345B;
+$dark: #070707;
+
+$padding-primary: 8px;
+$padding-big: 14px;
+$padding-small: 4px;
+
+body {
+    background-color: $bg;
+    color: $dark;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    margin: 0 $padding-big;
+}
+header {
+    padding: $padding-big 0;
+}
+nav {
+    margin: 0 $padding-big;
+}
+
+table {
+    border-collapse: collapse;
+}
+td, th {
+    padding: $padding-small;
+    text-align: left;
+}
+
+th {
+    border-bottom: 1px solid $shadow;
+}
+
+tr:nth-child(even) {background-color: $light}
+
+.table-nowrap {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+nav a {
+    text-decoration: none;
+}
+a,a:active {
+    color: $primary;
+}
+
+a.active {
+    font-weight: 600;
+    text-decoration: underline;
+
+}
+
+a:hover {
+    color: $highlight;
+    text-decoration: underline;
+}

@@ -1,0 +1,18 @@
+<h1>Welcome !</h1>
+
+
+<% if not session[:userinfo] %>
+    <p>Step 1 - Login.</p>
+    <%= button_to 'Login', 'auth/auth0', method: :post %>
+
+
+    <p>Step 2 - ????</p>
+     <%= link_to 'Write an Article', controller: 'articles' %> | &nbsp;
+    <%= link_to 'Articles', controller: 'articles' %>
+<% else %>
+<p>Welcome back <%= session[:userinfo]["info"]["nickname"] %>.</p>
+   <%= link_to 'Write an Article', controller: 'articles' %> | &nbsp;
+    <%= link_to 'Find an Article', controller: 'articles' %> | &nbsp;
+    <%= link_to 'View Dashboard', 'dashboard#show' %>
+<% end %>
+
