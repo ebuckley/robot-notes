@@ -2,8 +2,19 @@
 
 one:
   title: MyString
-  text: MyText
+  text: |
+    # Main
+    This is an extended article, with an expansive main paragraph
 
+    ## sub point
+    A subheading will be used to emphasize other things that are possible
+    
+    ### tertiary heading
+    headings go all the way down!
+
+    # High importance
+    
+    And eventually the flow of the document may return us to a main heading
 two:
   title: MyString
   text: MyText

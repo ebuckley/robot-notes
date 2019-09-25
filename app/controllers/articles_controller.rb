@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
     
     def show
         @article = Article.find(params[:id])
+        auto_tagger = ArticleTagger.new(article: @article)
         markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
         @html_content = markdown.render(@article.text)
     end
