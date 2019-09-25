@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
     def new
         @article = Article.new
     end
-
    
     def create
         user_id = session[:userinfo]["uid"]

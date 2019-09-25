@@ -13,7 +13,7 @@
         </div>
     <%end%>
 
-    <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+    <%= form_with(model: @article, local: true) do |form| %>
     
         <div class='form-element'>
             <label>
@@ -28,3 +28,4 @@
             <%= form.submit %>
         </div>
     <% end %>
+<%= link_to 'Back', articles_path %>

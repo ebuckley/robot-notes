@@ -15,15 +15,17 @@
  */
 
 /* RGB */
+
+$md-grey: #bbb;
+$shadow: $md-grey;
 $primary: #3454d1;
 $primary-dimmed: adjust-color($primary, $lightness: -10%);
 $highlight: #f7b267;
-$shadow: rgba(66, 78, 123, 1);
+// $shadow: rgba(66, 78, 123, 1);
 $light: #bbdaf9;
 $bg: rgba(255, 255, 255, 1);
 $error: #d1345B;
 $dark: #070707;
-$md-grey: #bbb;
 
 $padding-primary: 8px;
 $padding-big: 14px;
@@ -121,7 +123,7 @@ button:hover, input[type='submit']:hover {
 }
 
 input {
-    border: 1px solid $md-grey;
+    border: 1px solid $shadow;
     border-radius: 0.25em;
     padding: 0.5em 0.75em;
 }

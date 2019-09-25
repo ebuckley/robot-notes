@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'auth/logout' => 'auth0#logout'
   get 'dashboard' => 'dashboard#show'
 
+  
   resources :articles do
     resources :comments
   end

@@ -45,4 +45,12 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+  # Set omniauth test mode https://github.com/omniauth/omniauth/wiki/Integration-Testing
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:auth0] = OmniAuth::AuthHash.new({
+    'provider' => 'auth0',
+    'uid' => 'fake|deadbeef9989',
+    'info' => {}
+  })
 end

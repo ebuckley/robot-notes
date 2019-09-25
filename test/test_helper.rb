@@ -10,4 +10,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login_user
+    get auth_auth0_callback_url
+    assert_redirected_to dashboard_url
+  end
 end
