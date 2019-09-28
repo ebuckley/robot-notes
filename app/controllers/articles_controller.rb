@@ -4,21 +4,22 @@ class ArticlesController < ApplicationController
     def new
         @article = Article.new
     end
-   
+
     def create
         user_id = session[:userinfo]["uid"]
         @article = Article.new(article_params)
         @article.owner_id = user_id
+        tagging_service = TaggingService.new(@article)
+        tagging_service.associate_tags
         if @article.save
             redirect_to @article
         else
             render 'new'
         end
     end
-    
+
     def show
         @article = Article.find(params[:id])
-        auto_tagger = ArticleTagger.new(article: @article)
         markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
         @html_content = markdown.render(@article.text)
     end
@@ -30,6 +31,8 @@ class ArticlesController < ApplicationController
     def update
         @article = Article.find(params[:id])
         if @article.update(article_params)
+            tagging_service = TaggingService.new(@article)
+            tagging_service.associate_tags
             redirect_to @article
         else
             render 'edit'
