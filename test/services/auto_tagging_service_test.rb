@@ -35,6 +35,5 @@ The second heading should also be included in the automatic tags
         tagging_service = TaggingService.new(@article)
         tagging_service.associate_tags
         assert @article.tags.length == 2, "expected 2 tags but have #{@article.tags.length}"
-
     end
 end

@@ -7,6 +7,7 @@ ruby '2.6.3'
 gem 'omniauth-auth0', '~> 2.2'
 
 gem 'redcarpet'
+gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      RAILS_MASTER_KEY: a6b0227d1aec8a816fce69fad77a4bbb
+      RAILS_LOG_TO_STDOUT: "yes"
+      RAILS_ENV: production
+      POSTGRES_PASSWORD: mysecretpassword
+      # TODO select produciton
