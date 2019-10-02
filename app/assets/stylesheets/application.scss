@@ -39,16 +39,6 @@ body {
     font-family: sans-serif;
 }
 
-.container {
-    margin: 0 $padding-big;
-}
-header {
-    padding: $padding-big 0;
-}
-nav {
-    margin: 0 $padding-big;
-}
-
 table {
     border: 1px solid $shadow;
     border-radius: $padding-primary;
@@ -90,14 +80,17 @@ a:hover {
 
 // button styles!!
 
-button, input[type='submit'] {
+.btn, button, input[type='submit'] {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
     background-color: $primary;
     color: $bg;
     border: 1px solid transparent;
-    border-radius: $padding-primary;
+    border-radius: $padding-big * 2;
     font-size: 1rem;
     cursor: pointer;
-    padding: .5em .75em;
+    padding: $padding-primary $padding-big;
     white-space: nowrap;
     text-align: center;
 }
@@ -130,4 +123,71 @@ input {
 
 h1, h2, h3 {
     font-weight: 500;
+}
+
+
+// applicaiton layout
+
+.application {
+    display: grid;
+    grid-template-columns: 13em 1fr;
+    grid-gap: $padding-big * 2;
+    max-width: 75em;
+    margin: 0 auto 0;
+}
+
+.container {
+}
+
+nav {
+    margin: $padding-big 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+nav a.btn {
+    text-align: center;
+    width: calc(100% - 20px);
+}
+nav a {
+    font-family: 'Ubuntu', sans-serif;
+    // text-align: center;
+    border-radius: $padding-big * 2;
+    padding: $padding-primary $padding-big;
+    margin-bottom: $padding-big;
+}
+nav a:hover {
+    text-decoration: none;
+    background-color: $light;
+    color: $primary;
+}
+
+.title {
+    font-family: 'Ubuntu Mono', monospace;
+    padding: $padding-primary $padding-big;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8em;
+    margin: $padding-big 0
+}
+.title span {
+    margin-bottom: -14px;
+}
+
+/* Homepage layout */
+.home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+.left-pane {
+    background-image: image-url("cover.jpg");
+    background-size: cover;
+}
+
+.right-pane {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
 }

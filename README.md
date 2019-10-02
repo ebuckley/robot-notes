@@ -4,10 +4,10 @@
 - wrap things in an log helper action thingy
 - (DONE) migrate data so that we have a user id with the other stuff
 - (DONE) once-run migration from static file to db statefulness...
-- (did header+sass) overall styly-ness
+- (DONE) overall styly-ness
 - (done) markdown renderung
 - will it paginate?
-- tests...
+- (DONE)tests...
 
 # README
 This applicaiton needs a snapppy description so you getexcited and want to install it

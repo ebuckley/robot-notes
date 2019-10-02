@@ -17,24 +17,8 @@
   </head>
 
   <body>
-    <div class='application'>
-      <header>
-        <div class='title'>
-          <span>robot</span>
-          <span>NOTES</span>
-        </div>
-        <nav>
-          <a href="<%= articles_url %>"> <i class="fas fa-search"></i> Find </a>
-          <a href="<%= dashboard_show_url %>"> <i class="fas fa-robot"></i> Profile </a>
-          <a class='btn' href="<%= new_article_url %>"> <i class="fas fa-pen-alt"></i> Write </a>
-        </nav>
-      </header>
-      <div class="content" >
-        <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name %>
-        <% end -%>
-        <%= yield %>
-      </div>
+    <div>
+      <%= yield %>
     </div>
   </body>
 </html>

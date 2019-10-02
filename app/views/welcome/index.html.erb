@@ -1,18 +1,25 @@
-<h1>Welcome !</h1>
 
+<div class="home-page">
+    <div class="left-pane">
+        <div class="title">
+                <span>robot</span>
+                <span>NOTES</span>
+        </div>
+    </div>
 
-<% if not session[:userinfo] %>
-    <p>Step 1 - Login.</p>
-    <%= button_to 'Login', 'auth/auth0', method: :post %>
-
-
-    <p>Step 2 - ????</p>
-     <%= link_to 'Write an Article', controller: 'articles' %> | &nbsp;
-    <%= link_to 'Articles', controller: 'articles' %>
-<% else %>
-<p>Welcome back <%= session[:userinfo]["info"]["nickname"] %>.</p>
-   <%= link_to 'Write an Article', controller: 'articles' %> | &nbsp;
-    <%= link_to 'Find an Article', controller: 'articles' %> | &nbsp;
-    <%= link_to 'View Dashboard', 'dashboard#show' %>
-<% end %>
-
+    <div class="right-pane">
+        <div class='content'>
+        <% if not session[:userinfo] %>
+            <p>
+            Join an awesome community of writers
+            </p>
+            <%= button_to 'Login or Register', 'auth/auth0', method: :post %>
+        <% else %>
+        <p>Welcome back <%= session[:userinfo]["info"]["nickname"] %>.</p>
+        <%= link_to 'Write an Article', controller: 'articles' %> | &nbsp;
+            <%= link_to 'Find an Article', controller: 'articles' %> | &nbsp;
+            <%= link_to 'View Dashboard', 'dashboard#show' %>
+        <% end %>
+        </div>
+    </div>
+</div>
