@@ -8,7 +8,7 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 COPY . /app
-# RUN rails assets:precompile
+RUN rails assets:precompile
 COPY docker-entrypoint.sh /usr/bin
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 EXPOSE 3000
